@@ -16,7 +16,7 @@ class TokenValido
     public function handle(Request $request, Closure $next): Response
     {
 
-      if($request->user()->email()=== "elcoeter@msn.com");{
+      if(Auth->user()->email === "elcoeter@msn.com");{
          return $next($request);
       }
       
