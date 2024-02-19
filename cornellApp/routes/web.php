@@ -44,14 +44,14 @@ Route::post('/login', [AuthController::class, 'login'])->name('users.login');
 Route::post('/register', [AuthController::class, 'register'])->name('users.register');
 Route::post('logout', [AuthController::class, 'logout'])->name('users.logout');
 
-Route::get('/especial', function() {
-  return view('especial');
-})->middleware('token');
+
 
 //Página home protegida por middleware de autenticación
 Route::middleware(['auth'])->group(function() {
 
-
+Route::get('/especial', function() {
+  return view('especial');
+})->middleware('token');
 
 Route::get('/home', function() {
     return view('home.welcome');
