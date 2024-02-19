@@ -15,6 +15,10 @@ class TokenValido
      */
     public function handle(Request $request, Closure $next): Response
     {
+
+      if($request->input('password') !== 'sareta2016')
+          return redirect('first');
+    
         return $next($request);
     }
 }

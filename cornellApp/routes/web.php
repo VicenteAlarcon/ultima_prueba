@@ -42,7 +42,7 @@ Route::get('/register_form', function() {
 
 Route::post('/login', [AuthController::class, 'login'])->name('users.login');
 Route::post('/register', [AuthController::class, 'register'])->name('users.register');
-Route::post('logout', [AuthController::class, 'logout'])->name('users.logout');
+Route::post('logout', [AuthController::class, 'logout'])->name('users.logout')->middleware('token');
 
 //Página home protegida por middleware de autenticación
 Route::middleware(['auth'])->group(function() {
