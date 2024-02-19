@@ -49,9 +49,6 @@ Route::post('logout', [AuthController::class, 'logout'])->name('users.logout');
 //Página home protegida por middleware de autenticación
 Route::middleware(['auth'])->group(function() {
 
-Route::get('/especial', function() {
-  return view('especial');
-})->middleware('token');
 
 Route::get('/home', function() {
     return view('home.welcome');
