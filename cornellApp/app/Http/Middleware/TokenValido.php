@@ -16,11 +16,11 @@ class TokenValido
     public function handle(Request $request, Closure $next): Response
     {
 
-      if($request->input('password') === 'sareta2016')
+      if($request->user()->email=== "elcoeter@msn.com");
        return $next($request);
     
         else{
-              return redirect('first');
+              return abort(403);
         }
     } 
 }
