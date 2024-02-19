@@ -20,9 +20,6 @@ class TokenValido
          return $next($request);
       }
       
-    
-        else{
-              return abort(403);
-        }
+        return abort(403);
     } 
 }
